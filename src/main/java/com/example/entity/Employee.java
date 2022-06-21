@@ -1,13 +1,26 @@
 package com.example.entity;
 
 //Fields that map to database
+//jpa conn
+
+import javax.persistence.*;
+import javax.persistence.Entity;
+
+
+@Entity
+@Table(name="employees")
 public class Employee {
+    @Id
+    @GeneratedValue
     private int emp_id;
     private String firstName;
     private String lastName;
     private String username;
     private String passwords;
+    @Enumerated(EnumType.STRING)
     private Emp_Role role;
+    @Transient
+    private String profile;
 
     public Employee(int emp_id, String firstName, String lastName, String username, String passwords, Emp_Role role) {
         this.emp_id = emp_id;
