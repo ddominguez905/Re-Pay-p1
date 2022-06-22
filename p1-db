@@ -1,34 +1,8 @@
-select * from reimbursements
 select * from employees
-drop table employee
-drop table reimbursements
+insert into employees values (101,'Denisse', 'Dominguez', 'ASSOCIATE', 'me@email.com', '12345')
+select * from reimbursments
 
-
-create type re_status as enum ('PENDING','APPROVED','DENIED' );
-create type Emp_Role as enum ('MANAGER','ASSOCIATE');
-
-create table employees (
-	emp_id serial PRIMARY KEY,
-	firstName varchar(80),
-	lastName varchar(80),
-	role Emp_Role,
-	email varchar(50),
-	username varchar(50),
-	password varchar(100)
-	)
-create table reimbursements (
-	request_id serial PRIMARY KEY,
-	emp_id int references employees (emp_id),
-	expenseAmount money,
-	status re_status,
-	date_resolved date,
-	description text
-	)
-alter table employee add 
-alter table reimbursements add 
-
-CREATE EXTENSION pgcrypto;
-
-insert into employees values (denisse, dominguez, 'ASSOCIATE', my@email.com, dendom1, 12345)
-
-	
+delete * from employees
+UPDATE employees
+SET username = 'dendom', password = '12345'
+WHERE emp_id = 101;

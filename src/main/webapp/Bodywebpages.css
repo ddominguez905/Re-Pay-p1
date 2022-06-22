@@ -1,0 +1,59 @@
+
+
+body{
+  font-family: 'Lato', sans-serif;
+  background-color:rgb(135, 206, 250);
+  
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #ffffff;
+    font-size: 1.1em;
+}
+.navbar .navbar-nav .nav-link:hover{
+    color: #808080;
+}
+@media only screen and (min-width: 992px) {
+  .navbar .navbar-nav .nav-item .nav-link {
+    padding: 0 0.5em;
+  }
+  .navbar .navbar-nav .nav-item:not(:last-child) .nav-link {
+    border-right: 2px solid rgb(0, 0, 0);
+  }
+}
+/* Float four columns side by side */
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+
+  button.signin-button{
+    width: 100%;
+    padding: 5px x 5x;
+    border: none;
+    font-size: 32px;
+    border-radius: 30px;
+    background-color: rgb(48, 76, 94);
+    color:white;
+    margin-top: 15px;
+}
+button.signin-button:hover { background-color:grey; }

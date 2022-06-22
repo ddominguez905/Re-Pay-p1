@@ -15,7 +15,7 @@ import java.util.Optional;
 
 
 public class JdbcEmployeeRepository implements EmployeeRepository {
-    
+
     private static final Logger loggy = Logger.getLogger("ERS");
 
 
@@ -31,7 +31,7 @@ public class JdbcEmployeeRepository implements EmployeeRepository {
         EntityManager entityManager = EMF.createEntityManager();
         entityManager.getTransaction().begin();
 
-        Employee employee = EMF.find(Employee.createEntityManager).getResultList();
+        List <Employee> employee = entityManager.createQuery("from Employees").getResultList();
         entityManager.getTransaction().commit();
         entityManager.close();
 

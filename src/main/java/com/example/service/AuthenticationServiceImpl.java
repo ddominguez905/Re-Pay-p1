@@ -16,13 +16,12 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     public boolean authenticate(String username, String password) {
         Employee employee = employeeRepository.findByUsername(username);
-        if (username == null)
+        System.out.println(employee);
+        System.out.println(username);
+        if (employee == null)
             return false;
-        BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), employee.getPasswords());
-        if (result.verified) {
-            return true;
-        }
-        return false;
+
+        return password.equals(employee.getPasswords());
     }
 
     @Override
